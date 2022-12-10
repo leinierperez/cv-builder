@@ -17,6 +17,18 @@ class Main extends Component {
         address: '',
         description: '',
       },
+      experience: {
+        companyName: '',
+        position: '',
+        startDate: '',
+        endDate: '',
+      },
+      education: {
+        degree: '',
+        universityName: '',
+        startDate: '',
+        endDate: '',
+      },
     };
   }
 
@@ -36,6 +48,14 @@ class Main extends Component {
         <GeneralInfo
           handleChange={this.handleInputChange}
           generalInfo={this.state.generalInfo}
+        />
+        <Experience
+          handleChange={this.handleInputChange}
+          experience={this.state.experience}
+        />
+        <Education
+          handleChange={this.handleInputChange}
+          education={this.state.education}
         />
       </div>
     );
