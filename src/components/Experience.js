@@ -3,41 +3,19 @@ import React, { Component } from 'react';
 class Experience extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      groups: [],
-    };
   }
-
-  addGroup = () => {
-    const { companyName, position, startDate, endDate } = this.props.experience;
-    this.setState({
-      groups: [
-        ...this.state.groups,
-        {
-          id: crypto.randomUUID(),
-          data: { companyName, position, startDate, endDate },
-        },
-      ],
-    });
-  };
-
-  removeGroup = (id) => {
-    const groups = [...this.state.groups];
-    const index = groups.findIndex((group) => group.id === id);
-    groups.splice(index, 1);
-    this.setState({ groups });
-  };
 
   render() {
     return (
       <section>
         <div className='section-header'>
           <h2>Work Experience</h2>
-          <button onClick={this.addGroup}>Add</button>
+          <button onClick={() => this.props.addGroup('experienceGroups')}>
+            Add
+          </button>
         </div>
         <div className='field-groups'>
-          {this.state.groups.map((group) => {
+          {this.props.experienceGroups.map((group) => {
             return (
               <div key={group.id} className='group'>
                 <input
@@ -76,7 +54,11 @@ class Experience extends Component {
                     this.props.handleChange(event, 'experience')
                   }
                 />
-                <button onClick={() => this.removeGroup(group.id)}>
+                <button
+                  onClick={() =>
+                    this.props.removeGroup(group.id, 'experienceGroups')
+                  }
+                >
                   Remove
                 </button>
               </div>

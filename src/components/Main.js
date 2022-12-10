@@ -30,6 +30,8 @@ class Main extends Component {
         startDate: '',
         endDate: '',
       },
+      experienceGroups: [],
+      educationGroups: [],
     };
   }
 
@@ -43,6 +45,26 @@ class Main extends Component {
     });
   };
 
+  addGroup = (groupName) => {
+    const { degree, universityName, startDate, endDate } = this.state.education;
+    this.setState({
+      [groupName]: [
+        ...this.state[groupName],
+        {
+          id: crypto.randomUUID(),
+          data: { degree, universityName, startDate, endDate },
+        },
+      ],
+    });
+  };
+
+  removeGroup = (id, groupName) => {
+    const groups = [...this.state[groupName]];
+    const index = groups.findIndex((group) => group.id === id);
+    groups.splice(index, 1);
+    this.setState({ [groupName]: groups });
+  };
+
   render() {
     return (
       <div>
@@ -53,10 +75,16 @@ class Main extends Component {
         <Experience
           handleChange={this.handleInputChange}
           experience={this.state.experience}
+          addGroup={this.addGroup}
+          removeGroup={this.removeGroup}
+          experienceGroups={this.state.experienceGroups}
         />
         <Education
           handleChange={this.handleInputChange}
           education={this.state.education}
+          addGroup={this.addGroup}
+          removeGroup={this.removeGroup}
+          educationGroups={this.state.educationGroups}
         />
         <Preview data={this.state} />
       </div>
