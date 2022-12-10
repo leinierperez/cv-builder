@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Education from './Education';
 import Experience from './Experience';
 import GeneralInfo from './GeneralInfo';
+import Preview from './Preview';
 
 class Main extends Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class Main extends Component {
           handleChange={this.handleInputChange}
           education={this.state.education}
         />
+        <Preview data={this.state} />
       </div>
     );
   }
