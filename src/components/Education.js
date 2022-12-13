@@ -22,7 +22,7 @@ class Education extends Component {
                   name='degree'
                   type='text'
                   placeholder='Degree'
-                  value={group.degree}
+                  value={group.data.degree}
                   onChange={(event) =>
                     this.props.handleChange(
                       event,
@@ -36,7 +36,7 @@ class Education extends Component {
                   name='universityName'
                   type='text'
                   placeholder='University Name'
-                  value={group.universityName}
+                  value={group.data.universityName}
                   onChange={(event) =>
                     this.props.handleChange(
                       event,
@@ -50,7 +50,7 @@ class Education extends Component {
                   name='startDate'
                   type='text'
                   placeholder='Start Date'
-                  value={group.startDate}
+                  value={group.data.startDate}
                   onChange={(event) =>
                     this.props.handleChange(
                       event,
@@ -64,7 +64,7 @@ class Education extends Component {
                   name='endDate'
                   type='text'
                   placeholder='End Date'
-                  value={group.endDate}
+                  value={group.data.endDate}
                   onChange={(event) =>
                     this.props.handleChange(
                       event,

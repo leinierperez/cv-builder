@@ -22,7 +22,7 @@ class Experience extends Component {
                   name='companyName'
                   type='text'
                   placeholder='Company Name'
-                  value={group.companyName}
+                  value={group.data.companyName}
                   onChange={(event) =>
                     this.props.handleChange(
                       event,
@@ -36,7 +36,7 @@ class Experience extends Component {
                   name='position'
                   type='text'
                   placeholder='Position'
-                  value={group.position}
+                  value={group.data.position}
                   onChange={(event) =>
                     this.props.handleChange(
                       event,
@@ -50,7 +50,7 @@ class Experience extends Component {
                   name='startDate'
                   type='text'
                   placeholder='Start Date'
-                  value={group.startDate}
+                  value={group.data.startDate}
                   onChange={(event) =>
                     this.props.handleChange(
                       event,
@@ -64,7 +64,7 @@ class Experience extends Component {
                   name='endDate'
                   type='text'
                   placeholder='End Date'
-                  value={group.endDate}
+                  value={group.data.endDate}
                   onChange={(event) =>
                     this.props.handleChange(
                       event,
