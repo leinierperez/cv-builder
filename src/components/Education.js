@@ -24,7 +24,12 @@ class Education extends Component {
                   placeholder='Degree'
                   value={group.degree}
                   onChange={(event) =>
-                    this.props.handleChange(event, 'education')
+                    this.props.handleChange(
+                      event,
+                      'education',
+                      group.id,
+                      'educationGroups'
+                    )
                   }
                 />
                 <input
@@ -33,7 +38,12 @@ class Education extends Component {
                   placeholder='University Name'
                   value={group.universityName}
                   onChange={(event) =>
-                    this.props.handleChange(event, 'education')
+                    this.props.handleChange(
+                      event,
+                      'education',
+                      group.id,
+                      'educationGroups'
+                    )
                   }
                 />
                 <input
@@ -42,7 +52,12 @@ class Education extends Component {
                   placeholder='Start Date'
                   value={group.startDate}
                   onChange={(event) =>
-                    this.props.handleChange(event, 'education')
+                    this.props.handleChange(
+                      event,
+                      'education',
+                      group.id,
+                      'educationGroups'
+                    )
                   }
                 />
                 <input
@@ -51,7 +66,12 @@ class Education extends Component {
                   placeholder='End Date'
                   value={group.endDate}
                   onChange={(event) =>
-                    this.props.handleChange(event, 'education')
+                    this.props.handleChange(
+                      event,
+                      'education',
+                      group.id,
+                      'educationGroups'
+                    )
                   }
                 />
                 <button

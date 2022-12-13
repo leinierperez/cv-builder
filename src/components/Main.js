@@ -18,25 +18,20 @@ class Main extends Component {
         address: '',
         description: '',
       },
-      experience: {
-        companyName: '',
-        position: '',
-        startDate: '',
-        endDate: '',
-      },
-      education: {
-        degree: '',
-        universityName: '',
-        startDate: '',
-        endDate: '',
-      },
       experienceGroups: [],
       educationGroups: [],
     };
   }
 
-  handleInputChange = (event, section) => {
+  handleInputChange = (event, section, groupId = '', groupName = '') => {
     const value = event.target.value;
+    if (section === 'experience' || section === 'education') {
+      const groups = [...this.state[groupName]];
+      const index = groups.findIndex((group) => group.id === groupId);
+      groups[index].data[event.target.name] = value;
+      this.setState({ [groupName]: groups });
+      return;
+    }
     this.setState({
       [section]: {
         ...this.state[section],
@@ -46,13 +41,28 @@ class Main extends Component {
   };
 
   addGroup = (groupName) => {
-    const { degree, universityName, startDate, endDate } = this.state.education;
+    let data;
+    if (groupName === 'experienceGroups') {
+      data = {
+        companyName: '',
+        position: '',
+        startDate: '',
+        endDate: '',
+      };
+    } else if (groupName === 'educationGroups') {
+      data = {
+        degree: '',
+        universityName: '',
+        startDate: '',
+        endDate: '',
+      };
+    }
     this.setState({
       [groupName]: [
         ...this.state[groupName],
         {
           id: crypto.randomUUID(),
-          data: { degree, universityName, startDate, endDate },
+          data: data,
         },
       ],
     });

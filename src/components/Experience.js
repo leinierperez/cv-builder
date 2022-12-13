@@ -24,7 +24,12 @@ class Experience extends Component {
                   placeholder='Company Name'
                   value={group.companyName}
                   onChange={(event) =>
-                    this.props.handleChange(event, 'experience')
+                    this.props.handleChange(
+                      event,
+                      'experience',
+                      group.id,
+                      'experienceGroups'
+                    )
                   }
                 />
                 <input
@@ -33,7 +38,12 @@ class Experience extends Component {
                   placeholder='Position'
                   value={group.position}
                   onChange={(event) =>
-                    this.props.handleChange(event, 'experience')
+                    this.props.handleChange(
+                      event,
+                      'experience',
+                      group.id,
+                      'experienceGroups'
+                    )
                   }
                 />
                 <input
@@ -42,7 +52,12 @@ class Experience extends Component {
                   placeholder='Start Date'
                   value={group.startDate}
                   onChange={(event) =>
-                    this.props.handleChange(event, 'experience')
+                    this.props.handleChange(
+                      event,
+                      'experience',
+                      group.id,
+                      'experienceGroups'
+                    )
                   }
                 />
                 <input
@@ -51,7 +66,12 @@ class Experience extends Component {
                   placeholder='End Date'
                   value={group.endDate}
                   onChange={(event) =>
-                    this.props.handleChange(event, 'experience')
+                    this.props.handleChange(
+                      event,
+                      'experience',
+                      group.id,
+                      'experienceGroups'
+                    )
                   }
                 />
                 <button
