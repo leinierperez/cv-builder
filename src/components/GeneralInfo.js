@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class GeneralInfo extends Component {
   render() {
-    const { firstName, lastName, email, phone, title, address, description } =
+    const { name, lastName, email, phone, title, address, description } =
       this.props.generalInfo;
 
     return (
@@ -11,18 +11,11 @@ class GeneralInfo extends Component {
           <h2>General Info</h2>
         </div>
         <input
-          name='firstName'
+          name='name'
           type='text'
-          value={firstName}
+          value={name}
           onChange={(event) => this.props.handleChange(event, 'generalInfo')}
-          placeholder='First Name'
-        />
-        <input
-          name='lastName'
-          type='text'
-          value={lastName}
-          onChange={(event) => this.props.handleChange(event, 'generalInfo')}
-          placeholder='Last Name'
+          placeholder='Name'
         />
         <input
           name='email'

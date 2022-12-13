@@ -10,8 +10,7 @@ class Main extends Component {
 
     this.state = {
       generalInfo: {
-        firstName: '',
-        lastName: '',
+        name: '',
         email: '',
         phone: '',
         title: '',
@@ -96,7 +95,11 @@ class Main extends Component {
           removeGroup={this.removeGroup}
           educationGroups={this.state.educationGroups}
         />
-        <Preview data={this.state} />
+        <Preview
+          generalInfo={this.state.generalInfo}
+          experienceGroups={this.state.experienceGroups}
+          educationGroups={this.state.educationGroups}
+        />
       </div>
     );
   }
