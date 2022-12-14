@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class GeneralInfo extends Component {
   render() {
-    const { name, lastName, email, phone, title, address, description } =
+    const { name, email, phone, title, address, description } =
       this.props.generalInfo;
 
     return (
