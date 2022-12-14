@@ -15,31 +15,26 @@ class Preview extends Component {
       <div className='preview'>
         <div className='top-header'>
           <div className='left'>
-            <h1 className='name'>{generalInfo.name}John Doe</h1>
-            <h4 className='title'>{generalInfo.title}Software Engineer</h4>
+            <h1 className='name'>{generalInfo.name}</h1>
+            <h4 className='title'>{generalInfo.title}</h4>
           </div>
           <div className='right'>
             <div>
               <FaPhoneSquareAlt />
-              {generalInfo.phone}564564564565
+              {generalInfo.phone}
             </div>
             <div>
               <IoMdMail />
-              {generalInfo.email}fhfg@fdg.com
+              {generalInfo.email}
             </div>
             <div>
               <GrMapLocation />
-              {generalInfo.address}gjghj 657 fgh 8888
+              {generalInfo.address}
             </div>
           </div>
         </div>
 
-        <div className='description'>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
-          quae, eum libero quisquam cupiditate rerum nesciunt deserunt vel quia
-          ea obcaecati assumenda quos alias accusamus consequatur officia,
-          quibusdam totam molestias.
-        </div>
+        <div className='description'>{generalInfo.description}</div>
         <div className='experience'>
           <h2>Work Experience</h2>
           {this.props.experienceGroups.map((group) => {
