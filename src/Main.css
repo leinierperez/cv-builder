@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.editor section,
+.editor .group,
+.field-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.editor {
+  min-height: 1000px;
+}
+
+.section-header {
+  display: flex;
+  gap: 1rem;
+}

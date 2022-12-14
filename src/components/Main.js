@@ -3,6 +3,7 @@ import Education from './Education';
 import Experience from './Experience';
 import GeneralInfo from './GeneralInfo';
 import Preview from './Preview';
+import '../Main.css';
 
 class Main extends Component {
   constructor(props) {
@@ -76,25 +77,27 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
-        <GeneralInfo
-          handleChange={this.handleInputChange}
-          generalInfo={this.state.generalInfo}
-        />
-        <Experience
-          handleChange={this.handleInputChange}
-          experience={this.state.experience}
-          addGroup={this.addGroup}
-          removeGroup={this.removeGroup}
-          experienceGroups={this.state.experienceGroups}
-        />
-        <Education
-          handleChange={this.handleInputChange}
-          education={this.state.education}
-          addGroup={this.addGroup}
-          removeGroup={this.removeGroup}
-          educationGroups={this.state.educationGroups}
-        />
+      <div className='main'>
+        <div className='editor'>
+          <GeneralInfo
+            handleChange={this.handleInputChange}
+            generalInfo={this.state.generalInfo}
+          />
+          <Experience
+            handleChange={this.handleInputChange}
+            experience={this.state.experience}
+            addGroup={this.addGroup}
+            removeGroup={this.removeGroup}
+            experienceGroups={this.state.experienceGroups}
+          />
+          <Education
+            handleChange={this.handleInputChange}
+            education={this.state.education}
+            addGroup={this.addGroup}
+            removeGroup={this.removeGroup}
+            educationGroups={this.state.educationGroups}
+          />
+        </div>
         <Preview
           generalInfo={this.state.generalInfo}
           experienceGroups={this.state.experienceGroups}
